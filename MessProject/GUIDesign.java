@@ -16,9 +16,9 @@ public class GUIDesign {
     private JSpinner dateSpinner;
 
     // Database connection details
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/messmanagement";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/messmanagment";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Arup@2004";
+    private static final String DB_PASSWORD = "Lalgopal@2004";
 
     public GUIDesign() {
         formFrame = new JFrame("Mess Skip Form");
@@ -75,13 +75,14 @@ public class GUIDesign {
 
         gbc.gridy++;
         gbc.gridx = 0;
-        formFrame.add(new JLabel("Select Meals to Skip:"), gbc);
+        formFrame.add(new JLabel("Select Meals to Skip (Cost):"), gbc);
 
-        JPanel mealPanel = new JPanel();
-        breakfastCheckBox = new JCheckBox("Breakfast");
-        lunchCheckBox = new JCheckBox("Lunch");
-        snacksCheckBox = new JCheckBox("Snacks");
-        dinnerCheckBox = new JCheckBox("Dinner");
+        // Meal panel in a horizontal row
+        JPanel mealPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        breakfastCheckBox = new JCheckBox("Breakfast (₹25)");
+        lunchCheckBox = new JCheckBox("Lunch (₹40)");
+        snacksCheckBox = new JCheckBox("Snacks (₹20)");
+        dinnerCheckBox = new JCheckBox("Dinner (₹40)");
         mealPanel.add(breakfastCheckBox);
         mealPanel.add(lunchCheckBox);
         mealPanel.add(snacksCheckBox);
